@@ -123,7 +123,7 @@ app.use("/token", (req, res) => {
                 })
 
             } else {
-                console.log("user hai")
+                console.log("Cutomer already exist")
                 let token = await createToken(user.paysafeId,user.email)
                 //console.log(token, user.paysafeId)
                 res.send({token: token, id:user.paysafeId})
@@ -147,14 +147,14 @@ async function payment(obj) {
             data: obj,
             headers: headers
         }).then((response)=>{
-            console.log("response hai",response.data)
+            console.log("Payment_response",response.data)
             result = response
         }).catch(error => {
-            console.log("error ka response h",error.response.data)
+            console.log("Payment Error's reponse",error.response.data)
         })
         
       }catch(error){
-        console.log("catch block h",error.data.error)
+        console.log("This is from catch block ",error.data.error)
     }
     return result
 }

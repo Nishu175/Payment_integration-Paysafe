@@ -4,7 +4,7 @@ import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 
 
-axios.defaults.baseURL='http://localhost:5000'
+//axios.defaults.baseURL='http://localhost:5000'
 
 function App() {
   const [firstname, setfirstname] = useState("")
